@@ -15,14 +15,16 @@ app.get('/', (req, res) => {
 
 const rotasCategorias = require('./routes/categorias');
 const rotasProdutos = require('./routes/produtos');
+const rotasPedidos = require('./routes/pedidos');
 
 app.use('/api/categorias', rotasCategorias);
 app.use('/api/produtos', rotasProdutos);
+app.use('/api/pedidos', rotasPedidos);
 
 app.use((req, res, next) => {
     res.status(404).json({
         sucesso: false,
-        mensagem: `Rota '${req.url}' não encontrada na API do Big Bite Club.`
+        mensagem: `Rota '${req.url}' não encontrada na API da Big Bite Club.`
     });
 });
 
@@ -38,15 +40,17 @@ app.listen(PORTA, () => {
     console.log('🍟 ================================');
     console.log('');
     console.log('📋 Rotas disponíveis:');
-    console.log(`   GET    http://localhost:${PORTA}/api/categorias`);
-    console.log(`   POST   http://localhost:${PORTA}/api/categorias`);
-    console.log(`   GET    http://localhost:${PORTA}/api/produtos`);
-    console.log(`   GET    http://localhost:${PORTA}/api/produtos/:id`);
-    console.log(`   POST   http://localhost:${PORTA}/api/produtos`);
-    console.log(`   PUT    http://localhost:${PORTA}/api/produtos/:id`);
-    console.log(`   DELETE http://localhost:${PORTA}/api/produtos/:id`);
+    console.log(`   GET    /api/categorias`);
+    console.log(`   POST   /api/categorias`);
+    console.log(`   GET    /api/produtos`);
+    console.log(`   GET    /api/produtos/:id`);
+    console.log(`   POST   /api/produtos`);
+    console.log(`   PUT    /api/produtos/:id`);
+    console.log(`   DELETE /api/produtos/:id`);
+    console.log(`   GET    /api/pedidos`);
+    console.log(`   POST   /api/pedidos`);
     console.log('');
     console.log('💣 Rota de teste de erro:');
-    console.log(`   GET    http://localhost:${PORTA}/api/produtos/erro-teste`);
+    console.log(`   GET    /api/produtos/erro-teste`);
     console.log('');
-});
+});''
