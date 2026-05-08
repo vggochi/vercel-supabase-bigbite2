@@ -53,4 +53,6 @@ app.listen(PORTA, () => {
     console.log('💣 Rota de teste de erro:');
     console.log(`   GET    /api/produtos/erro-teste`);
     console.log('');
-});''
+});
+
+module.exports = app;
