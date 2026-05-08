@@ -22,7 +22,7 @@ app.use('/api/produtos', rotasProdutos);
 app.use((req, res, next) => {
     res.status(404).json({
         sucesso: false,
-        mensagem: `Rota '${req.url}' não encontrada na API do Haruy Sushi.`
+        mensagem: `Rota '${req.url}' não encontrada na API do Big Bite Club.`
     });
 });
 
