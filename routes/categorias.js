@@ -92,14 +92,6 @@ router.put('/:id', async (req, res, next) => {
         }else{
             res.status(404).json({mensagem: 'Categoria não encontrada para atualizar.' });
 
-router.delete('/:id', async (req, res, next) => {
-    try{
-        const { id } = req.params;
-        const { error } = await supabase
-        .from('categorias')
-        .delete()
-        .eq('id', id
-
 // ─── Exportação do Router ─────────────────────────────────────
 // Exportamos o router para ser usado no server.js
 module.exports = router;
